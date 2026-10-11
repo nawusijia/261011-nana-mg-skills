@@ -1,0 +1,6 @@
+interface:
+  display_name: "娜娜 MG｜克肆进阶 3D·等轴·流体"
+  short_description: "克肆第三课可执行复现：SDF流体、PBR软体阵列与真等轴城市"
+  default_prompt: "使用 $nana-mg-kesi-craft，按风格参考做一条独立的新题MG；先预检，再静帧审片、返工、渲染、声画核验。原案例保持只读。"
+policy:
+  allow_implicit_invocation: true

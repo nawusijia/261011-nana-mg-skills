@@ -1,0 +1,6 @@
+interface:
+  display_name: "娜娜 MG 叙事与动效 V1"
+  short_description: "从可见变化到有感触的短片，校准和声、动效细节、镜头揭示与排版"
+  default_prompt: "使用 $nana-mg-storycraft，把主题做成清楚、有感触的动效短片，按 V1 方法审片并保留版本。"
+policy:
+  allow_implicit_invocation: true
