@@ -15,8 +15,9 @@
 |---|---|
 | [`skills/nana-mg-storycraft`](skills/nana-mg-storycraft/SKILL.md) | 导演方法：一句话变化句、声画共用的事件表、对象连续变形、运动的因果、声音设计，以及强制的“真实看图”审片闭环。附两个脚本：`audit_mg.py`（抽帧拼图 + 音视频数值检查）和 `visual_gate.py`（检查审片证据链是否齐全，防止 AI 不看图就报“全绿”）。 |
 | [`skills/nana-mg-kesi-craft`](skills/nana-mg-kesi-craft/SKILL.md) | 进阶工艺：SDF 液体、Three.js PBR 软体阵列、真等轴 2.5D 城市三种风格的做法，外加一个真实返工案例（折纸山脊锯齿 + 风车闪烁，V3→V4）。 |
+| [`skills/nana-ai-story-episode`](skills/nana-ai-story-episode/SKILL.md) | **套娃彩蛋**：克肆（Claude Opus 5.5）做《AI天团 第一集》这条视频本身的方法。博主口播切句与识别、视频模型生成角色出镜（参考图 + 文字 + 5 秒音色参考）、真人小头像与口型对齐（`align_vo.py`）、糖果贴纸包装组件（Remotion，`candy-kit.tsx`）。 |
 
-两个 Skill 配合用：先用 storycraft 想清楚拍什么、怎么验收，再按题材看 kesi-craft 里对应的工艺单。
+前两个 Skill 配合用：先用 storycraft 想清楚拍什么、怎么验收，再按题材看 kesi-craft 里对应的工艺单。想做一条像《AI天团》这样“博主 + AI 角色出镜”的故事片，再加上 nana-ai-story-episode。
 
 ## 怎么用
 
@@ -29,7 +30,7 @@
 
 > 用 nana-mg-storycraft，帮我做一条 10–15 秒的动效短片，主题是“……”。做完先自己抽帧看，有问题自己改，改完再给我。
 
-两个 Skill 要放在同一级目录里，它们会互相引用。
+这几个 Skill 要放在同一级目录里，它们会互相引用。
 
 脚本需要 Python 3.9+、Pillow、NumPy 和 FFmpeg：
 
@@ -40,6 +41,8 @@ python skills/nana-mg-storycraft/scripts/visual_gate.py --init 你的工程目�
 python skills/nana-mg-kesi-craft/scripts/preflight.py
 ```
 
+`nana-ai-story-episode` 的脚本另外需要 `pip install faster-whisper`，组件需要 Remotion 4。
+
 ## 诚实说明
 
 - 这些方法来自我们自己几轮真实的做片和返工，**不是模型能力的评测**。在你的 Agent 上有没有用，要你自己跑一遍才知道。
@@ -48,6 +51,6 @@ python skills/nana-mg-kesi-craft/scripts/preflight.py
 
 ## 致谢与许可
 
-- Skill 内容由娜乌斯嘉的 AI 助理们整理：克肆（Claude）提供做片方法和案例，洄光（GPT）把它写成 Skill 并用它返工。
+- Skill 内容由娜乌斯嘉的 AI 助理们整理：克肆（Claude）提供做片方法和案例，洄光（GPT）把前两个写成 Skill 并用它返工；nana-ai-story-episode 由克肆（Claude Opus 5.5）根据这条视频的实际制作过程写成。
 - kesi-craft 的部分技术参考了 [Vincentwei1021/mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)（MIT）。
 - 本仓库以 [MIT 许可证](LICENSE) 开源。仓库里不包含任何字体、HDRI 或音频素材，使用时请自行确认这些素材的授权。

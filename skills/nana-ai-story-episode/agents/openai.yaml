@@ -1,0 +1,6 @@
+interface:
+  display_name: "娜娜 AI 故事片｜AI天团做法"
+  short_description: "博主口播 + AI角色出镜 + 真人小头像 + 糖果贴纸包装的完整流程"
+  default_prompt: "使用 $nana-ai-story-episode，先拿真实素材和博主录音定稿，再生成角色镜头、对口型、做糖果包装，按版本交付预览。"
+policy:
+  allow_implicit_invocation: true
